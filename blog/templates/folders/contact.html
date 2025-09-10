@@ -1,0 +1,55 @@
+{%extends 'folders/base.html'%}
+{%load static%}
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+</head>
+
+<link rel="stylesheet" href="{% static 'blogstyle/images' %}">
+{%block para%}
+<link rel="stylesheet" href="{% static 'blogstyle/contact.css' %}">
+
+{% if success %}
+<center><div class="alert alert-success col-5  " role="alert"><p class="fw-bold text-capitalize">form successfully send..!</p></div></center>
+{%else%}
+ 
+{% for field in form %}
+    {% if field.errors %}
+      {% for error in field.errors %}
+    <center>  <span class="fw-bold text-capitalize text-light " >{{ field.label_tag }}</span> <span class="text-info fw-bold text-capitalize">  {{ error }}</span></center> 
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endfor %}
+{%endif%}
+ 
+<div class="container mt-5 bg-light p-5 pl-0 rounded" style="height: 590px; ">
+
+   <h1 class="dispaly-3">Contact Us</h1>
+  
+
+   <form method="POST" class="col-5 form-group p-3 ">
+      {% csrf_token %}
+      
+    
+      <div class="input-group">
+         <span class="input-group-text border border-dark"><i class="fa-solid fa-user"></i></span> <input type="text"
+            class="form-control border border-dark" placeholder="Enter Name" name="name">
+      </div>
+      <div class="input-group mt-3">
+         <span class="input-group-text border border-dark"><i class="fa-solid fa-envelope"></i></span> <input
+            type="email" class="form-control border border-dark" placeholder="Enter your Email" name="email">
+      </div>
+      <textarea placeholder="Message" style="margin-top: 13px; width: 65vh; height: 16rem;" name="message">
+
+      </textarea>
+      <button role="button" class="btn btn-primary btn-lg">Send</button>
+
+   </form>
+
+   <div id="image">
+      <img src="{%static 'images/bb.webp'%}" alt="" width="680px" height="586px" class="rounded" id="contact">
+   </div>
+</div>
+{%endblock%}

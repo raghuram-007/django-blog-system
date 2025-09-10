@@ -1,0 +1,16 @@
+<!-- reset_email.html -->
+{% autoescape off %}
+<p>Hello {{ user.username }},</p>
+
+<p>You requested a password reset. Click the link below to reset it:</p>
+
+<p>
+  <a href="http://{{ domain }}{% url 'blog:reset_password' uidb64=uidb64 token=token %}">
+    Reset Your Password
+  </a>
+</p>
+
+<p>If you didn’t request this, you can safely ignore it.</p>
+
+<p>Thanks,<br>The Team</p>
+{% endautoescape %}

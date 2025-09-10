@@ -1,0 +1,50 @@
+{%extends 'folders/base.html'%}
+{%load static%}
+
+<link rel="stylesheet" href="{% static 'blogstyle/images' %}">
+
+{%block para%}
+<link rel="stylesheet" href="{%static 'blogstyle/about.css'%}">
+
+
+</div>
+
+<div class="container-fluid p-3 p-md-5">
+  <div class="row flex-column-reverse flex-md-row">
+    <!-- Image column -->
+    <div class="col-12 col-md-6 col-lg-5 mb-4 mb-md-0 d-flex align-items-center justify-content-center">
+
+      <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <img src="{%static 'images/ll.webp'%}" alt="BlogSphere illustration" class="img-fluid rounded-4 shadow-lg"
+          id="lion" style="max-height: 500px; object-fit: cover;height: 850px;" width="500px">
+      </div>
+    </div>
+
+    <!-- Text content column -->
+    <div class="col-12 col-md-6 col-lg-7 ps-md-4 mt-3 mt-md-5" id="paragarp">
+      <div data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500">
+
+      <h1 class="text-light display-5 fw-bold mb-3">📝 About Us</h1>
+      <p id="parag" class="fw-medium text-light lh-lg fs-5 fs-md-6">
+        Welcome to BlogSphere, a place where ideas meet expression.
+
+        At BlogSphere, we believe everyone has a story worth sharing — whether it's a travel adventure, a tech
+        tutorial, a personal growth journey, or just the little things that make life beautiful. Our goal is to
+        create a space that's honest, creative, and inspiring.
+
+        We write for thinkers, doers, and dreamers. Every post is crafted with passion and intent — aiming to
+        inform, entertain, and connect with our readers. From articles on productivity and coding to reflections on
+        wellness and lifestyle, you'll find content that speaks to both the mind and the heart.
+
+        Whether you're a casual reader or an aspiring writer, we're glad you're here. Dive into our world of words,
+        and feel free to join the conversation.
+      </p>
+    </div>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

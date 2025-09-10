@@ -1,0 +1,43 @@
+{%extends 'folders/base.html'%}
+{%load static%}
+{%block para%}
+<link rel="stylesheet" href="{%static 'blogstyle/create.css'%}">
+<h1 class="text-capitalize fw-bold display-6 text-center text-warning mt-4">Edit post</h1>
+{% include 'folders/includes/error.html'%}
+<form action="" method="post" enctype="multipart/form-data"
+    class="form-group ms-5 col-6 bg-light fw-bolder rounded p-4 " style=" position: relative;
+        left: 350px;
+        top: 60px;">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="blog_title" class="form-label  fw-bolder">Blog Title</label>
+        <input type="text" class="form-control " id="blog_title" name="title" value="{{post.title}}">
+    </div>
+    <div class="mb-3">
+        <label for="img" class="form-label  fw-bolder">Image</label>
+        <input type="file" class="form-control-file " name="img">
+    </div>
+    <div class="mb-3">
+        <label for="blog_content" class="form-label fw-bolder">Blog Content</label>
+        <input type="text" placeholder="Enter Content" name="content" value="{{post.content}}" class="form-control"
+            style="height: 17vh;">
+    </div>
+    <div class="mb-3">
+        <label for="blog_categer" class="form-label fw-bolder">Blog Content</label>
+       <select name="categer" class="form-select">
+    <option value="">Select</option>
+    {% for collect in collec %}
+        <option value="{{ collect.id }}" {% if post.categer and collect.id == post.categer.id %}selected{% endif %}>
+            {{ collect.name }}
+        </option>
+    {% endfor %}
+</select>
+
+
+
+    </div>
+    <br>
+    <button type="submit" class="btn btn-outline-info ">Update</button>
+</form>
+
+{%endblock%}

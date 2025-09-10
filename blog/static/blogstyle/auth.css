@@ -1,0 +1,58 @@
+/* Responsive styles for login form */
+    @media (max-width: 1200px) {
+      #form {
+        left: 400px !important;
+        width: 40% !important;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      #form {
+        left: 250px !important;
+        width: 50% !important;
+        top: 120px !important;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      #form {
+        left: 100px !important;
+        width: 70% !important;
+        top: 100px !important;
+        margin: 0 auto;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      #form {
+        left: 0 !important;
+        width: 90% !important;
+        top: 80px !important;
+        position: relative !important;
+        margin: 20px auto;
+        padding: 20px 15px !important;
+      }
+      
+      h2 {
+        font-size: 1.5rem !important;
+      }
+      
+      .input-group-text {
+        padding: 0.5rem !important;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      #form {
+        width: 95% !important;
+        padding: 15px 10px !important;
+      }
+      
+      h2 {
+        font-size: 1.3rem !important;
+      }
+      
+      .btn {
+        padding: 0.5rem !important;
+      }
+    }

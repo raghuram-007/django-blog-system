@@ -1,0 +1,128 @@
+body {
+    background: linear-gradient(#1b4242, #4fbdba, #cdeed6);
+    overflow-x: hidden;
+}
+
+
+
+
+
+#form {
+    position: relative;
+    left: 370px;
+    top: 180px;
+}
+
+/* .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+    .card {
+      border: none;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    } */
+#image {
+
+    position: relative;
+    left: 37rem;
+    top: -434px;
+
+}
+
+#contact {
+    position: relative;
+    top: -110px;
+
+
+}
+
+#parag {
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: none;
+
+
+}
+
+#post_img {
+    position: relative;
+    top: 30px;
+}
+
+
+#paragarp {
+    position: relative !important;
+    left: -20px !important;
+
+    text-shadow: none !important;
+
+
+
+}
+
+#wel {
+    position: relative;
+    top: -250px;
+    left: 230px;
+}
+
+#us {
+    position: relative;
+    top: -250px;
+    left: 230px;
+}
+
+#add {
+    position: relative;
+    top: -120px;
+    left: -280px;
+
+}
+
+#dash {
+    position: relative;
+    left: -280px;
+}
+
+#relates {
+    width: 40rem;
+    position: relative;
+    top: -920px;
+    left: 410px;
+    height: 260px;
+}
+#dash{
+    position: relative;
+    left: -329px;
+}
+
+
+
+#lion {
+    position: relative !important;
+    top: 30px !important;
+}
+
+.card-img-top {
+    position: relative;
+    top: 2px;
+    background-color: #f8f9fa;
+    /* light gray */
+    border-radius: 10px;
+}
+
+p {
+    text-shadow: none;
+}
+
+
+
+
+

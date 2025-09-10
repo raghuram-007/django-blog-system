@@ -1,0 +1,50 @@
+{% extends 'folders/base.html' %}
+
+
+{% block para %}
+
+<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+
+    <div class="container-fluid p-5 mt-3">
+
+        {% if hosts %}
+
+        <div class="row">
+            <!-- Main Post Section -->
+            <div class="col-md-8">
+                <h1 class="fw-bolder text-light">{{ hosts.title|title }}
+                    <i class="lead fw-bold">({{ hosts.categer|title }})</i>
+                </h1><br>
+                <p class="text-capitalize text-info fw-bolder">post created by {{hosts.date|date:'m,Y'}}</p>
+                <img src="{%if hosts.img%}{{ hosts.img.url }}{%else%}https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png{%endif%}"
+                    alt="{{hosts.title}}" class="img-fluid rounded shadow mb-4"
+                    style="max-height: 760px; object-fit: cover; width: 100%;">
+
+                <p class="fw-bold text-light" style="font-size: large; text-shadow: 0 0 3px black;">
+                    {{ hosts.content|title }}
+                </p>
+            </div>
+
+            <!-- Related Posts Section -->
+            <div class="col-md-4 ">
+                <div class="bg-light p-4 rounded shadow  ">
+                    <h3 class="mb-3">Related Posts</h3>
+                    <ul class="list-unstyled">
+                        {% for relates in relate %}
+                        <li class="mb-2">
+                            <a href="{% url 'blog:detail' slug=relates.slug %}" class="text-decoration-none text-dark">
+                                {{ relates.title|capfirst }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <h1 class="text-light fw-bolder">No Posts</h1>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

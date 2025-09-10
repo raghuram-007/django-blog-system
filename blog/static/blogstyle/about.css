@@ -1,0 +1,32 @@
+ /* Modern enhancements */
+  #paragarp {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #paragarp {
+      padding: 1.5rem;
+    }
+    
+    .display-5 {
+      font-size: 2.2rem !important;
+    }
+    
+    #parag {
+      font-size: 1rem !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    #paragarp {
+      padding: 1rem;
+    }
+    
+    .display-5 {
+      font-size: 1.8rem !important;
+    }
+  }

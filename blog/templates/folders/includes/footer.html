@@ -1,0 +1,180 @@
+
+    <style>
+        /* Footer Styles */
+.footer-main {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 5rem;
+    margin-top: 25rem; /* Added space above footer */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.footer-description {
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ddd;
+    transform: translateY(-3px);
+}
+
+.footer-heading {
+    color: #fff;
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-info {
+    font-style: normal;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    margin-right: 10px;
+    color: crimson;
+    margin-top: 3px;
+}
+
+.newsletter-text {
+    color: #aaa;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form .form-control {
+    padding: 0.75rem;
+    flex-grow: 1;
+}
+
+.btn-subscribe {
+    background-color: transparent;
+    color: #ffc107;
+    border-color: #ffc107;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+}
+
+.btn-subscribe:hover {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #333;
+}
+
+.copyright p {
+    color: #777;
+    font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+    </style>
+</head>
+<body>
+    <footer class="footer-main">
+        <div class="footer-container">
+            <!-- Company Info -->
+            <div class="footer-section">
+                <h3 class="footer-logo">BlogSphere</h3>
+                <p class="footer-description">BlogSphere is your go-to hub for insightful articles, trending stories, and fresh perspectives. We empower writers and readers to connect, share, and grow together.
+</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h4 class="footer-heading">Contact Info</h4>
+                <address class="contact-info">
+                    <p><i class="fas fa-map-marker-alt contact-icon"></i>123 Fabulous Street, Sphere City</p>
+                    <p><i class="fas fa-phone contact-icon"></i>+1 987 653 4823</p>
+                    <p><i class="fas fa-envelope contact-icon"></i>info@BlogSphere.com</p>
+                    <p><i class="fas fa-clock contact-icon"></i>Mon-Fri: 9AM-6PM</p>
+                </address>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-section">
+                <h4 class="footer-heading">Newsletter</h4>
+                <p class="newsletter-text">Subscribe to our newsletter for the latest updates and offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email" class="form-control">
+                    <button type="submit" class="btn btn-subscribe">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>&copy; 2025 BlogSphere. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>

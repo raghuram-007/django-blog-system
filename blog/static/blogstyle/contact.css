@@ -1,0 +1,54 @@
+ /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      .container.mt-5.bg-light {
+        height: auto !important;
+        padding: 20px !important;
+        margin-top: 20px !important;
+      }
+      
+      form.form-group {
+        width: 100% !important;
+        padding: 10px !important;
+      }
+      
+      #image {
+        display: none;
+      }
+      
+      textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      .input-group {
+        width: 100% !important;
+      }
+      
+      .btn-primary {
+        width: 100%;
+        margin-top: 15px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .container.mt-5.bg-light {
+        padding: 15px !important;
+        border-radius: 10px !important;
+      }
+      
+      h1.dispaly-3 {
+        font-size: 24px;
+        text-align: center;
+      }
+      
+      .input-group-text {
+        padding: 8px 12px;
+      }
+    }
+    
+    /* Additional small screen adjustments */
+    @media (max-width: 400px) {
+      .alert.col-5 {
+        width: 90% !important;
+      }
+    }

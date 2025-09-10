@@ -1,0 +1,52 @@
+<style>
+      .nav-pills .nav-link {
+            margin: 0 5px;
+        }
+        .navbar-brand a {
+            font-size: 1.5rem;
+        }
+        @media (max-width: 992px) {
+            .navbar-nav {
+                padding: 0.5rem 0;
+            }
+            .nav-item {
+                margin: 0.2rem 0;
+            }
+            .form-group {
+                margin: 1rem 0;
+                left: 0 !important;
+            }
+        }
+</style>
+<nav class="navbar navbar-expand-lg bg-dark p-2 sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-light fw-bolder text-decoration-none" href="{% url 'blog:index'%}">BlogSphere</a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                        <span class="navbar-toggler-icon text-light">☰</span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarContent">
+                        <ul class="navbar-nav p-3 ms-md-5 nav-pills ">
+                            {%if user.is_authenticated%}
+                            <li class="nav-item"><a href="{% url 'blog:index'%}" class="nav-link text-light fw-semibold"> Home</a></li>
+                            <li class="nav-item"><a href="{% url 'blog:post'%}" class="nav-link text-light fw-semibold ">Blog</a> </li>
+                            <li class="nav-item"><a href="{%url 'blog:about'%}" class="nav-link text-light fw-semibold">About</a> </li>
+                            <li class="nav-item"><a href="{%url 'blog:contact'%}" class="nav-link text-light fw-semibold"> Contact</a></li>
+                            <li class="nav-item"><a href="{%url 'blog:dashboard'%}" class="nav-link text-light fw-semibold"> Dashboard</a></li>
+                             <li class="nav-item ms-md-2 text-capitalize"><a href="{%url 'blog:logout'%}" class="nav-link text-light fw-semibold"> logout</a></li>
+                            <form action="{% url 'blog:post' %}" method="get" class="form-group d-flex ms-md-2" style="position: relative;left: 430px;" >
+                                <input type="search" placeholder="Search" class="form-control" value="{{query}}" name="q">
+                                <button class="btn btn-outline-light ms-2">Search</button>
+                            </form>
+                           
+                            {%else%}
+                                          <li class="nav-item"><a href="{% url 'blog:index'%}" class="nav-link text-light fw-semibold"> Home</a></li>
+                            <li class="nav-item"><a href="{%url 'blog:sign'%}" class="nav-link text-light fw-semibold"> Register</a></li>
+                            <li class="nav-item "><a href="{% url 'blog:login'%}" class="nav-link text-light fw-semibold">Login</a> </li>
+                            {%endif%}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>

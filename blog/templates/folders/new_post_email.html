@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Blog Posted</title>
+</head>
+<body>
+    <h2>Hello {{ user.username }},</h2>
+    <p>Your blog post "<strong>{{ post.title }}</strong>" has been successfully published!</p>
+    <p>You can view your post by clicking the link below:</p>
+    <a href="{{ post_url }}">View Your Blog Post</a>
+    <br><br>
+    <p>Thanks,<br>MyBlog Team</p>
+</body>
+</html>

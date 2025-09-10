@@ -1,0 +1,92 @@
+ /* Responsive styles for dashboard */
+    @media (max-width: 768px) {
+      #dash {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto;
+        position: relative;
+        left: -10px !important;
+      }
+      
+      .display-6 {
+        font-size: 1.8rem !important;
+         position: relative;
+        top: 10px !important;
+        left: -30px !important;
+      }
+      
+      .d-flex.justify-content-center.gap-3 {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .d-flex.justify-content-center.gap-3 a {
+        width: 100% !important;
+        margin-bottom: 10px;
+      }
+      
+      .card {
+        height: auto !important;
+        margin-bottom: 20px;
+      }
+      
+      .card-img-top {
+        height: 250px !important;
+      }
+      
+      .d-flex.gap-5 {
+        flex-direction: column;
+        gap: 10px !important;
+      }
+      
+      .d-flex.gap-5 a, .d-flex.gap-5 button {
+        width: 100% !important;
+        margin: 5px 0 !important;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .container.mt-5 {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      #dash{
+        position: relative !important;
+        left: 230px 
+        !important;
+      }
+      
+      .display-6 {
+        font-size: 1.5rem !important;
+      }
+      
+      h2.mb-4 {
+        font-size: 1.8rem;
+      }
+      
+      h3.text-light {
+        font-size: 1.5rem;
+      }
+      
+      .btn-lg {
+        padding: 0.2rem 1rem;
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .card-img-top {
+        height: 200px !important;
+      }
+      
+      .display-6 {
+        font-size: 1.3rem !important;
+      }
+    }
+    
+    /* Ensure images are always responsive */
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }

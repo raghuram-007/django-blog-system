@@ -1,0 +1,96 @@
+{% extends 'folders/base.html' %}
+{%load static%}
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+
+<link rel="stylesheet" href="{% static 'blogstyle/images' %}">
+
+{% block para %}
+<link rel="stylesheet" href="{% static 'blogstyle/dasshboard.css' %}">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            
+            <h2 class="mb-4 text-info fw-bolder" id="dash">Dashboard</h2>
+
+            {% if user.is_authenticated %}
+            <!-- Welcome Section -->
+            <img src="{% static 'images/thalapathy.jpg' %}" alt="Welcome Image" class="img-fluid rounded shadow-lg"
+                width="710" id="dash">
+            <p class="text-info fw-bold display-6 mt-3" id="wel">Welcome,</p>
+            <h4 class="text-light fw-bolder text-capitalize display-6" id="us">{{ user.username }}</h4>
+
+            <!-- Action Buttons -->
+            <div class="d-flex justify-content-center gap-3 my-4">
+                <a href="{% url 'blog:new_post' %}" class="btn btn-primary fw-bold col-10 btn-lg">Add Blog</a>
+                <a href="{% url 'blog:post' %}" class="btn btn-outline-light fw-bold col-10 btn-lg ">See Posts</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <hr class="divider col-12 text-light">
+    <!-- Recent Posts Section -->
+    {% include 'folders/includes/error.html'%}
+    <div class="row ">
+        <div class="col-12">
+            <h3 class="text-light mb-4">Your Recent Posts</h3>
+        </div>
+
+        {% if alls %}
+        {% for web in alls %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card shadow-sm border-0" style="height: 700px;">
+                <!-- Image -->
+                <img src="{%if web.img%}{{ web.img.url }}{%else%}https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png{%endif%}"
+                    alt="{{ web.title }}" class="card-img-top"
+                    style="height: 370px; object-fit:cover;">
+
+                <!-- Card Body -->
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-primary">{{ web.title|upper }}</h5>
+                    <p class="card-text text-muted text-capitalize">{{ web.content|truncatechars:96 }}</p>
+                    {%if not web.is_publish%}
+                    <a href="{%url 'blog:publish_post' post_id=web.id%}" class="btn btn-success col-4 mt-3"> Publish <i
+                            class="fas fa-paper-plane"></i>
+                    </a>
+                    {%endif%}
+
+                    <div class="d-flex gap-5">
+                        <a class="btn btn-warning col-4 mt-3" href="{% url 'blog:edit_post' post_id=web.id   %}"> Edit
+                            <i class="fas fa-edit edit-icon lg" title="Edit"></i></a>
+                        <button class="btn btn-danger col-4 mt-3 mx-5"
+                            onclick="conform(`{% url 'blog:delete_post' post_id=web.id   %}`)">Delete <i
+                                class="fas fa-trash"></i></button>
+                    </div>
+                    <a href="{% url 'blog:detail' slug=web.slug %}" class="btn btn-outline-primary btn-sm mt-auto">Know
+                        More</a>
+                </div>
+
+                <!-- Footer -->
+                <div class="card-footer bg-transparent border-top-0 text-muted small">
+                    {{ web.date|date:"j M, Y" }}
+                    <span class="float-end text-danger fw-bold">{{ web.categer }}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="col-12">
+            <p class="text-light">You haven't posted anything yet.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<script>
+    function conform(url) {
+        var del = confirm('Are you sure to Delete?')
+        if (del) {
+            window.location.href = url
+        }
+    }
+</script>
+{% endblock %}

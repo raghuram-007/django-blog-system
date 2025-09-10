@@ -1,0 +1,26 @@
+{%extends 'folders/base.html'%}
+{%load static%}
+{%block para%}
+<link rel="stylesheet" href="{%static 'blogstyle/auth.css'%}">
+   {% include 'folders/includes/error.html'%}
+<form method="POST" class="col-4 shadow-lg p-4 rounded bg-light" style=" position: relative;
+    left: 550px;
+    top: 180px; " id="form">
+    {% csrf_token %}
+  
+   
+    <h2 class="text-center ">Login Page</h2>
+    <div class="input-group mt-4">
+        <span class="input-group-text"><i class="fa fa-user"></i></span><input type="text" placeholder="Username"
+            class="form-control" name="username" value="{{form.username.value|default:''}}">
+    </div>
+    <div class="input-group mt-3">
+        <span class="input-group-text"><i class="fa fa-unlock" aria-hidden="true"></i></span><input type="password"
+            placeholder="Password" class="form-control" name="password">
+    </div>
+
+    <a href="{%url 'blog:forget'%}" class="link-danger">Forget Password</a>
+    <button class="btn btn-success col-12 mt-4">Sign-In</button>
+    <p class="fw-semibold">Don't have an Account? <a href="{% url 'blog:sign'%}" class="link-primary">Sign-Up</a> </p>
+</form>
+{%endblock%}

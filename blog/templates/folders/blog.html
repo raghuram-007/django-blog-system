@@ -1,0 +1,91 @@
+{%extends 'folders/base.html'%}
+{%load static%}
+
+
+<link rel="stylesheet" href="{% static 'blogstyle/images' %}">
+
+
+{%block para%}
+<link rel="stylesheet" href="{%static 'blogstyle/post.css'%}">
+
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" id="carouselExampleAutoplaying">
+  <div class="carousel-inner">
+    <div class="carousel-item active ">
+      <img src="{%static 'images/cc.jpg'%}" class="d-block w-100" alt="">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="position: relative; top: -140px;">Post Your Media</h5>
+        <p style="position: relative; top: -130px;">make some friend and share.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'images/pp.jpeg'%}" class="d-block w-100" alt="">
+      <div class="carousel-caption d-none d-md-block mb-5">
+        <h5 style="position: relative; top: -140px;">Blog of the day</h5>
+        <p style="position: relative; top: -130px;"> Some representative content for the blog slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'images/tt.webp'%}" class="d-block w-100" alt="">
+      <div class="carousel-caption  ">
+        <h5 style="position: relative; top: -140px;">Like & Share</h5>
+        <p style="position: relative; top: -130px;">Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'images/dd.jpg'%}" class="d-block w-100" alt="">
+
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev" data-bs-target="#carouselExampleAutoplaying">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next" data-bs-target="#carouselExampleAutoplaying">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br>
+<div data-aos="zoom-in" data-aos-delay="200">
+<div class="container-fluid my-1">
+  <div class="row">
+    {%if page_obj%}
+    <h1 class="display-5 fw-bolder text-light">Latest Post</h1>
+    {%for web in page_obj%}
+    <div class="col-sm-6 col-md-4 col-lg-4 mb-4">
+      <div class="card  shadow-sm" style=" height: 100%;">
+        <div class="card-head">
+
+          <img
+            src="{%if web.img%}{{web.img.url}}{%else%}https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png{%endif%}"
+            alt="" class="card-img-top img-fluid mx-auto d-block"
+            style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px;">
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title">{{web.title|upper}}</h5>
+          <p class="card-text">{{web.content|truncatechars:115}}</p>
+          <a href="{% url 'blog:detail' slug=web.slug%}" class="link-primary float-end">Know More</a>
+        </div>
+        <div class="card-footer text-muted">
+          {{web.date|date:' j,Y'}} <a class="text-danger fw-bolder float-end text-decoration-none">{{web.categer}}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+   {%include 'folders/includes/paginator.html'%}
+   
+
+
+    {%else%}
+    <h3>No Latest Post is Available</h3>
+    {%endif%}
+  </div>
+</div>
+
+
+{%endblock%}
