@@ -33,23 +33,48 @@ Project Structure
 
 django-blog-system/
 │
-├─ blog/                  # Main app containing models, views, forms, templates
+├─ blog/ 
+                 # Main app containing models, views, forms, templates
+
 │   ├─ __pycache__/       # Python cache files
+
+
 │   ├─ templates/         # HTML templates for home, dashboard, posts, etc.
+
+
 │   ├─ forms.py           # Forms for login, register, contact, post
+
+
 │   ├─ models.py          # Models: Media, Category, About
+
+
 │   ├─ views.py           # Views handling requests and business logic
+
+
 │   └─ urls.py            # URL routing for blog app
+
 │
+
+
 ├─ blogproject/           # Django project folder
+
+
 │   ├─ __pycache__/       # Python cache files
+
 │   ├─ settings.py        # Project settings
+
 │   ├─ urls.py            # Project URL routing
+
 │   └─ wsgi.py            # WSGI entry point
+
 │
+
 ├─ media/                 # Uploaded media files
+
 ├─ db.sqlite3             # SQLite database
+
 ├─ manage.py              # Django management script
+
 └─ requirements.txt       # Python dependencies
 
 ## Author
